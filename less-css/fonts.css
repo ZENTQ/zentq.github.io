@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'Gentium Book Basic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Gentium Book Basic'), local('GentiumBookBasic'), url(https://fonts.gstatic.com/s/gentiumbookbasic/v11/pe0zMJCbPYBVokB1LHA9bbyaQb8ZGjcIVw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Gentium Book Basic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Gentium Book Basic Bold'), local('GentiumBookBasic-Bold'), url(https://fonts.gstatic.com/s/gentiumbookbasic/v11/pe0wMJCbPYBVokB1LHA9bbyaQb8ZGjcw65Rfyw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Yeseva One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Yeseva One Regular'), local('YesevaOne-Regular'), url(https://fonts.gstatic.com/s/yesevaone/v15/OpNJno4ck8vc-xYpwWWxpio.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v17/S6u9w4BMUTPHh7USew8.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v17/S6uyw4BMUTPHvxk.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v17/S6u9w4BMUTPHh6UVew8.ttf) format('truetype');
+}

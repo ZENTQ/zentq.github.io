@@ -1,0 +1,1227 @@
+// compress: false
+
+@import "vars";
+@import "fonts";
+@import "other";
+
+html::-webkit-scrollbar {
+  width: 0;
+}
+
+body {
+	font-size: 16px;
+	color: @main;
+}
+
+a {
+	color: @main;
+	text-decoration: none;
+}
+
+#header-bg {
+	width: 100%;
+	height: 110px;
+	background: url(../img/nav-bg.png) repeat-x;
+	background-size: contain;
+	transition: all .3s ease;
+	z-index: 11;
+}
+
+// MOBILE BTN
+
+#mobile-menu-btn {
+	display: none;
+	width: 60px;
+	height: 45px;
+	position: relative;
+	margin: 50px auto;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+	cursor: pointer;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+#mobile-menu-btn span {
+	display: block;
+	position: absolute;
+	height: 9px;
+	width: 100%;
+	background: #fff;
+	border-radius: 9px;
+	opacity: 1;
+	left: 0;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: .25s ease-in-out;
+	-moz-transition: .25s ease-in-out;
+	-o-transition: .25s ease-in-out;
+	transition: .25s ease-in-out;
+}
+
+#mobile-menu-btn span:nth-child(1) {
+	top: 0px;
+}
+
+#mobile-menu-btn span:nth-child(2),#mobile-menu-btn span:nth-child(3) {
+	top: 18px;
+}
+
+#mobile-menu-btn span:nth-child(4) {
+	top: 36px;
+}
+
+#mobile-menu-btn.open span:nth-child(1) {
+	top: 18px;
+	width: 0%;
+	left: 50%;
+}
+
+#mobile-menu-btn.open span:nth-child(2) {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+#mobile-menu-btn.open span:nth-child(3) {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+#mobile-menu-btn.open span:nth-child(4) {
+	top: 18px;
+	width: 0%;
+	left: 50%;
+}
+
+// MOBILE BTN
+
+.fixedPosition {
+	overflow: hidden;
+}
+.header--fixed {
+	position: fixed;
+}
+// Header
+#header-bg.header--out {
+	z-index: 9;
+	transform: translateY(-110%);
+}
+#header-bg.header--active {
+	background: @footer_bg;
+	z-index: 9;
+	box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.5);
+}
+
+.header--main {
+	position: fixed;
+	top: 0;
+	transform: translateY(0);
+}
+
+header {
+	width: 100%;
+	&.navigation {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		height: 110px;
+		&>.logo {
+			z-index: 4;
+		}
+		&>.logo>a:focus {
+			outline: none;
+		}
+	}
+	&>.nav-bar {
+		height: 100%;
+		display: flex;
+		align-items: center;
+	}
+}
+
+.container-grid {
+	max-width: 1250px;
+	margin: 0 auto;
+}
+#nav-menu {
+	display: flex;
+	align-items: center;
+	height: 100%;
+
+	&>li.header--link {
+		font-family: @gentium;
+		font-weight: bold;
+		font-size: 21px;
+		margin-left: 25px;
+		transition: color 0.2s linear;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		position: relative;
+		padding: 0 10px;
+		&:first-child {
+			margin-left: 0;
+		}
+		&>a.link:hover {
+			color: #cbc8bc;
+		}
+		&>a.link:focus {
+			outline: none;
+		}
+	}
+	&>li.active-link:before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 4px;
+		top: 0;
+		background: #cbc8bc;
+		left: 0;
+	}
+	&>.header-social-icons {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		margin-right: 40px;
+		margin-left: 20px;
+		&>.soc-link {
+			margin-right: 15px;
+			color: @social_icons;
+			font-size: 21px;
+			&:last-child {
+				margin-right: 0;
+			}
+			&:hover {
+				color: darken(@social_icons, 15%);
+			}
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+}
+
+
+#section-promo {
+	width: 100%;
+	padding-top: 110px;
+	padding-bottom: 1px;
+	background: url(../img/Bg_sect1.png) no-repeat center;
+	background-size: cover;
+	background-position: center;
+	padding-bottom: 145px;
+}
+
+#main-promo-content {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	&>.title {
+		opacity: 0.92;
+		line-height: 1.3;
+		text-align: center;
+		margin-top: 100px;
+		font-family: @yeseva;
+		font-size: 90px;
+		text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+	}
+	&>#promo-btns {
+		&>.btn-promo {
+			color: #fff;
+			text-transform: uppercase;
+			padding: 17px 50px;
+			background: rgba(0, 0, 0, 0.65);
+			border: 1px solid rgba(0, 0, 0, 0.8);
+			font-family: @lato;
+			margin-right: 30px;
+			font-size: 18px;
+			transition: background 0.1s ease-in-out;
+			&:hover {
+				background: rgba(0, 0, 0, 0.8);
+			}
+			&:focus {
+				outline: none;
+			}
+		}
+		.btn-white {
+			background: rgba(255, 255, 255, 0.2);
+			border: 1px solid rgba(255, 255, 255, 0.7);
+			margin-right: 0;
+			&:hover {
+				background: rgba(255, 255, 255, 0.45);
+			}
+		}
+	}
+}
+
+.decoration-line {
+	display: flex;
+	margin: 31px 0;
+	background: url(../img/line-dec.png) no-repeat;
+	width: 235px;
+	height: 43px;
+	background-size: contain;
+}
+
+#section-about {
+	width: 100%;
+	background: url(../img/about-bg.png) no-repeat center;
+	background-size: cover;
+	&>.container-about {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: row;
+		width: 100%;
+		padding-top: 100px;
+		padding-bottom: 100px;
+		&>.dish-img {
+			background: url(../img/dish.png) no-repeat;
+			background-size: contain;
+			background-position: center;
+			width: 557px;
+			height: 560px;
+			margin-right: 60px;
+			transition: filter 0.15s linear;
+			&:hover {
+				filter: drop-shadow(0px 7px 10px rgba(0,0,0,0.2));
+			}
+		}
+		&>#about-block {
+			height: 100%;
+			width: 430px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			margin-left: 110px;
+			&>#about-title {
+				color: @accent;
+				font-family: @yeseva;
+				font-size: 36px;
+			}
+			&>#p-about {
+				opacity: 0.9;
+				color: @pText;
+				font-family: @lato;
+				font-size: 16px;
+				font-weight: bold;
+				text-align: center;
+				line-height: 1.5;
+				margin-bottom: 55px;
+			}
+			&>#about-cook {
+				width: 219px;
+				height: 221px;
+				background: url(../img/cook.png) no-repeat;
+				background-size: contain;
+				margin-left: 18%;
+			}
+
+		}
+	}
+}
+
+#section-ingredients {
+	padding-top: 100px;
+	padding-bottom: 100px;
+	width: 100%;
+	background: url(../img/ingr-bg.png) no-repeat center;
+	background-size: cover;
+	&>.container-ingredients {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		height: 100%;
+
+		&>#ingredients-block {
+			padding-right: 80px;
+			padding-left: 80px;
+			padding-top: 80px;
+			padding-bottom: 75px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			flex-direction: column;
+			background: rgba(0,0,0,0.67);
+			margin-right: 40px;
+			&>#title-ingredients {
+				font-family: @yeseva;
+				font-size: 36px;
+			}
+			&>#p-ingredients {
+				font-family: @lato;
+				font-size: 16px;
+				width: 420px;
+				line-height: 1.5;
+				margin-bottom: 65px;
+			}
+			&>#img-ingr {
+				width: 390px;
+				height: 110px;
+				background: url(../img/ingr.png) no-repeat;
+				background-size: contain;
+			}
+		}
+	}
+}
+
+#section-menu {
+	width: 100%;
+	background: url(../img/menu-bg.png) no-repeat center;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	&>.container-menu {
+		display: flex;
+		flex-wrap: wrap;
+		height: 100%;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 100px;
+		margin-bottom: 100px;
+		&>.menu-block-column {
+			display: flex;
+			flex-direction: column;
+			margin-left: 110px;
+			&:last-child {
+				margin-left: 0;
+				margin-right: 110px;
+			}
+			&>.menu-block {
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				height: auto;
+				width: 430px;
+				margin-bottom: 30px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+				&>.special-menu {
+					border: 1px solid;
+					border-image-slice: 1;
+					border-width: 1px;
+					border-image-source: linear-gradient(0.25turn, lighten(#ddcf9c, 10%), #ddcf9c);
+					&:before {
+						content: 'Special';
+						font-family: @lato;
+						font-size: 14px;
+						width: 70px;
+						height: 22px;
+						background: #000;
+						position: absolute;
+						right: -1px;
+						top: -22px;
+						text-align: center;
+						background: url(../img/special-bt.png) no-repeat;
+						background-size: cover;
+					}
+				}
+				&>.dec-divider {
+					width: 247px;
+					height: 24px;	
+				}
+				&>.menu-title {
+					color: @accent;
+					font-size: 36px;
+					font-family: @yeseva;
+				}
+				&>.menu-item {
+					line-height: 1.5;
+					width: 100%;
+					margin-bottom: 10px;
+					padding: 8px 10px;
+					position: relative;
+					&>.dec-line {
+						height: 1px;
+						width: 100%;
+						background: linear-gradient(0.25turn, lighten(#ddcf9c, 15%), #ddcf9c, lighten(#ddcf9c, 15%));
+						margin-top: 5px;
+						margin-bottom: 8px;
+					}
+					&>.menu-name-row {
+						display: flex;
+						flex-direction: row;
+						justify-content: space-between;
+						color: @menu_name;
+						font-size: 21px;
+						font-family: @yeseva;
+					}
+					&>.dish-describe {
+						color: @pText;
+						font-size: 15px;
+						opacity: 0.9;
+						font-family: @lato;
+						font-weight: bold;
+					}
+				}
+			}
+		}
+		&>.menu-block-row:last-child {
+			align-items: flex-end;
+		}
+	}
+}
+
+#section-reviews {
+	width: 100%;
+	background: url(../img/reviews-bg.png) no-repeat center;
+	background-size: cover;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	&>.container-reviews {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&>.reviews-block {
+			width: 770px;
+			padding-top: 80px;
+			padding-bottom: 100px;
+			background: url(../img/review-bg.png) no-repeat center;
+			background-size: cover;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			flex-direction: column;
+			&>.divider-white {
+				margin-top: 18px;
+				margin-bottom: 20px;
+			}
+			&>.title-review {
+				font-family: @yeseva;
+				font-size: 36px;
+				opacity: 0.95;
+			}
+			&>.review-text {
+				font-family: @gentium;
+				font-weight: bold;
+				font-size: 25px;
+				color: #dde0df;
+				width: 630px;
+				line-height: 1.9;
+				position: relative;
+				&:before {
+					content: '';
+					width: 32px;
+					height: 25px;
+					background: url(../img/quotes.png) no-repeat;
+					background-size: contain;
+					position: absolute;
+					left: -37px;
+					top: -5px;
+				}
+			}
+			&>.under-review-text {
+				margin-top: 35px;
+				opacity: 0.85;
+				font-family: @lato;
+				font-size: 18px;
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+#section-reservations {
+	padding-top: 100px;
+	padding-bottom: 100px;
+	width: 100%;
+	background: url(../img/reserv-bg.png) no-repeat center;
+	background-size: cover;
+	&>.container-reservations {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		&>.reservation-content {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			height: 550px;
+			margin: 0 40px;
+			&>.img-block {
+			width: 570px;
+			height: 100%;
+			display: flex;
+			justify-content: space-between;
+
+			&>.dish-img {
+				width: 270px;
+				height: 100%;
+				background: url(../img/dish-img1.png) no-repeat;
+				background-size: cover;
+				&:last-child {
+					background: url(../img/dish-img2.png) no-repeat;
+					background-size: cover;
+				}
+			}
+		}
+		&>.reservation-block {
+			display: flex;
+			align-items: center;
+			text-align: center;
+			flex-direction: column;
+			justify-content: space-between;
+			width: 430px;
+			height: 100%;
+			&>.reserv-title {
+				font-family: @yeseva;
+				font-size: 36px;
+				color: @accent;
+			}
+			&>.reserv-text {
+				font-family: @lato;
+				font-size: 16px;
+				font-weight: bold;
+				line-height: 1.5;
+				color: @pText;
+				display: flex;
+				flex-direction: column;
+
+				&>span {
+					margin: 10px 0;
+				}
+			}
+			&>.input-block {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				margin-top: 45px;
+				margin-bottom: 5px;
+				.btn-row {
+					display: flex;
+					width: 100%;
+					justify-content: center;
+					&>.btn-reservation {
+						padding: 10px 60px;
+						border-style: none;
+						background: @accent;
+						color: #fff;
+						font-size: 16px;
+						font-family: @opensans;
+						transition: background 0.1s ease-in-out;
+							&:focus {
+								outline: none;
+							}
+							&:hover {
+								background: darken(@accent, 3%);
+							}
+					}
+				}
+
+				&>.input-item {
+					width: 200px;
+					margin-bottom: 30px;
+					&>.input-name {
+						font-family: @opensans;
+						font-weight: bold;
+						font-size: 14px;
+						color: @accent;
+						padding-bottom: 8px;
+						text-align: left;
+					}
+					&>.reservation-input {
+						border-style: none;
+						border: 1px solid #c8c6c6;
+						padding: 10px 15px;
+						background: rgba(255,255,255,0.3);
+						font-family: @opensans;
+						color: #7c7c7c;
+						width: 170px;
+						&::placeholder {
+							font-family: @opensans;
+							color: #7c7c7c;
+							font-weight: bold;
+							font-style: italic;
+							opacity: 0.9;
+						}
+						&:hover {
+							background: rgba(255,255,255,0.5);
+						}
+						&:focus {
+							outline: none;
+							border: 1px solid @accent;
+						}
+					}
+					&>input[type="date"]::-webkit-calendar-picker-indicator {
+						opacity: 0.8;
+						background: url(../img/date_icon.png) no-repeat;
+						background-size: contain;
+						width: 13px;
+						height: 14px;
+						transition: background 0.1s ease-in-out;
+						&:focus {
+							outline: none;
+							background: url(../img/date_icon_focus.png) no-repeat;
+							background-size: contain;
+						}
+						&:hover {
+							outline: none;
+							background: url(../img/date_icon_focus.png) no-repeat;
+							background-size: contain;
+						}
+					}
+				}
+			}
+		}
+	}
+		
+	}
+}
+
+footer#footer {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	width: 100%;
+	background: @footer_bg;
+	&>#footer-section {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		&>.footer-block {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			height: 195px;
+			max-width: 350px;
+			text-align: center;
+			&:first-child {
+				margin-left: 40px;
+			}
+			&:last-child {
+				margin-right: 40px;
+			}
+			&>.footer-title {
+				font-family: @yeseva;
+				font-size: 21px;
+			}
+			&>.footer-divider {
+				width: 199px;
+				height: 19px;
+				background: url(../img/fdivider.png);
+				margin-top: 15px;
+				margin-bottom: 20px;
+			}
+			&>.footer-text {
+				font-family: @opensans;
+				line-height: 1.5;
+				font-size: 16px;
+				&>span {
+					font-weight: bold;
+				}
+			}
+			&>.footer-social {
+				margin-top: auto;
+				font-size: 18px;
+				width: 100px;
+				display: flex;
+				justify-content: space-between;
+				&>.social-link:hover {
+					color: @accent;
+				}
+				&>.social-link:focus {
+					outline: none;
+				}
+			}
+			&>.cards-footer {
+				width: 110px;
+			}
+		}
+	}
+}
+
+.dec-divider {
+	.divider(15px, 30px);
+}
+
+.divider-white {
+	width: 247px;
+	height: 24px;
+	background: url(../img/Divider_white.png) no-repeat;
+	background-size: contain;
+	margin-top: 15px;
+	margin-bottom: 30px;
+}
+
+@media (max-width: 1300px) {
+	.container-grid {
+		max-width: 1040px;
+	}
+	#nav-menu > .header-social-icons {
+		margin-right: 0;
+	}
+	#section-menu > .container-menu > .menu-block-column:first-child {
+		margin-left: 0;
+	}
+	#section-menu > .container-menu > .menu-block-column:last-child {
+		margin-right: 0;
+	}
+	#section-reservations > .container-reservations > .reservation-content {
+		margin: 0;
+	}
+	#section-reservations > .container-reservations > .reservation-content > .img-block {
+		width: 54%;
+	}
+	#section-reservations > .container-reservations > .reservation-content > .img-block > .dish-img {
+		width: 47%;
+	}
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 1070px) {
+	.container-grid {
+		max-width: 880px;
+	}
+	header .logo {
+		width: 17.72%;
+	}
+	#nav-menu > li.header--link {
+		font-size: 18px;
+		margin-left: 0;
+	}
+	#main-promo-content > .title {
+		font-size: 60px;
+	}
+	#section-about > .container-about > #about-block {
+		margin-left: 0;
+	}
+	#section-about > .container-about > #about-block > #about-title {
+		font-size: 30px;
+	}
+	.dec-divider {
+		width: 200px;
+		margin-bottom: 12px;
+	}
+	#section-about > .container-about > #about-block > #p-about {
+		font-size: 15px;
+	}
+	#section-about > .container-about > .dish-img {
+		margin-right: 0;
+		width: 465px;
+	}
+
+	#section-ingredients .container-ingredients {
+		display: flex;
+		justify-content: center;
+	}
+	
+	#section-ingredients > .container-ingredients > #ingredients-block {
+		padding-right: 10%;
+		padding-left: 10%;
+	}
+	#section-ingredients > .container-ingredients > #ingredients-block {
+		margin-right: 0;
+	}
+	#section-menu > .container-menu > .menu-block-column > .menu-block {
+		width: 380px;
+	}
+	#section-menu > .container-menu > .menu-block-column > .menu-block > .menu-title {
+		font-size: 34px;
+
+	}
+	#section-menu > .container-menu > .menu-block-column > .menu-block > .menu-item > .menu-name-row {
+		font-size: 19px;
+	}
+	#section-reservations > .container-reservations > .reservation-content > .img-block {
+		width: 46%;
+	}
+	#section-reservations > .container-reservations > .reservation-content > .img-block > .dish-img {
+		width: 47.5%;
+	}
+	footer#footer > #footer-section > .footer-block:nth-child(2) {
+		margin-right: 50px;
+	}
+	footer#footer > #footer-section > .footer-block > .footer-text {
+		font-size: 15px;
+	}
+	footer#footer > #footer-section > .footer-block:first-child {
+		margin-left: 0;
+	}
+	footer#footer > #footer-section > .footer-block:last-child {
+		margin-right: 0;
+	}
+}
+
+@media (max-width: 992px) {
+	#mobile-menu-btn {
+		display: block;
+		z-index: 10;
+	}
+	#nav-menu {
+		visibility: visible;
+		left: -130%;
+		flex-direction: column;
+		justify-content: flex-start;
+		display: flex;
+		width: 100%;
+		height: 120vh;
+		position: absolute;
+		z-index: 3;
+		top: 0;
+		bottom: 0;
+		background: @footer_bg;
+		transition: left 0.25s ease-in-out;
+
+		& > .header-social-icons {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 60px;
+			width: 100%;
+			border-bottom: 2px solid #ffffff;
+			background: @pText;
+			margin-left: 0;
+			align-self: flex-end;
+		}
+		& > .header-social-icons > .soc-link {
+			margin-right: 20px;
+			color: #fff;
+			font-size: 21px;
+		}
+		&>li.active-link:before {
+			display: none;
+		}
+		&>li.active-link {
+			width: 100%;
+			height: 100%;
+			background: @accent;
+			transition: background 0.2s ease-in-out;
+		}
+		&>li.header--link {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 60px;
+			width: 100%;
+			border-bottom: 2px solid #ffffff;
+			padding: 0;
+			&:first-child {
+				margin-top: 110px;
+				border-top: 2px solid #ffffff;
+			}
+		}
+	}
+	#nav-menu.show-mobile-menu {
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		z-index: 3;
+
+	}
+	.container-grid {
+		max-width: 90%;
+	}
+}
+
+@media (max-width: 970px) {
+	#section-menu > .container-menu {
+		justify-content: center;
+		flex-direction: column;
+	}
+	#section-menu > .container-menu > .menu-block-column > .menu-block > .menu-title {
+		font-size: 42px;
+	}
+	#section-menu > .container-menu > .menu-block-column > .menu-block > .menu-item > .menu-name-row {
+		font-size: 24px;
+	}
+	#section-menu > .container-menu > .menu-block-column > .menu-block > .menu-item > .dish-describe {
+		font-size: 17px;
+	}
+	#section-menu > .container-menu > .menu-block-column > .menu-block {
+		margin-bottom: 30px;
+	}
+	#section-menu > .container-menu > .menu-block-column > .menu-block:last-child {
+		margin-bottom: 30px;
+	}
+
+}
+
+@media (max-width: 780px) {
+	#section-reviews > .container-reviews > .reviews-block > .review-text {
+		font-size: 20px;
+	}
+	#section-reviews > .container-reviews > .reviews-block > .review-text:before {
+		left: -5%;
+	}
+	#section-reviews > .container-reviews > .reviews-block > .under-review-text {
+		font-size: 17px;
+	}
+	#section-reservations > .container-reservations > .reservation-content {
+		justify-content: center;
+	}
+	#section-reservations > .container-reservations > .reservation-content > .img-block {
+		display: none;
+	}
+	footer#footer > #footer-section > .footer-block {
+		height: 100%;
+	}
+	footer#footer > #footer-section {
+		
+	}
+	footer#footer > #footer-section > .footer-block > .footer-social {
+		margin-top: 18%;
+	}
+	footer#footer > #footer-section > .footer-block > .footer-text {
+		font-size: 12px;
+	}
+	#section-reviews > .container-reviews > .reviews-block {
+		width: 100%;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	#section-reviews > .container-reviews > .reviews-block > .review-text {
+		width: 90%;
+	}
+}
+@media (max-width: 710px) {
+	#mobile-menu-btn {
+		width: 40px;
+		height: 45px;
+	}
+	#mobile-menu-btn span {
+		height: 7px;
+	}
+	#mobile-menu-btn span:nth-child(2), #mobile-menu-btn span:nth-child(3) {
+		top: 14px;
+	}
+	#mobile-menu-btn span:nth-child(4) {
+		top: 28px;
+	}
+	footer#footer > #footer-section {
+		flex-direction: column;
+
+	}
+	footer#footer > #footer-section > .footer-block {
+		margin-bottom: 40px;
+	}
+	footer#footer > #footer-section > .footer-block:nth-child(2) {
+		margin-right: 0;
+		margin-bottom: 40px;
+	}
+	footer#footer > #footer-section > .footer-block > .footer-text {
+		font-size: 15px;
+	}
+	footer#footer > #footer-section > .footer-block > .footer-title {
+		font-size: 24px;
+	}
+	footer#footer > #footer-section > .footer-block > .footer-social {
+		font-size: 22px;
+		width: 60%;
+	}
+	footer#footer > #footer-section > .footer-block > .cards-footer {
+		width: 70%;
+	}
+}
+
+@media (max-width: 670px) {
+	#section-about > .container-about > .dish-img {
+		display: none;
+	}
+	#section-about > .container-about {
+		justify-content: center;
+	}
+
+}
+
+@media (max-width: 560px) {
+	#main-promo-content > .title {
+		font-size: 48px;
+		margin-top: 45px;
+	}
+	.decoration-line {
+		width: 185px;
+	}
+	#section-promo {
+		padding-top: 100px;
+		padding-bottom: 50px;
+	}
+	#promo-btns {
+		display: flex;
+		flex-direction: column;
+	}
+	#main-promo-content > #promo-btns > .btn-promo {
+		margin-right: 0;
+		margin-bottom: 15px;
+	}
+	#section-ingredients > .container-ingredients > #ingredients-block {
+		padding-right: 0;
+		padding-left: 0;
+		padding-top: 60px;
+		padding-bottom: 40px;
+	}
+	#section-ingredients > .container-ingredients > #ingredients-block > #p-ingredients {
+		width: 80%;
+	}
+	#section-ingredients > .container-ingredients > #ingredients-block > #img-ingr {
+		width: 73%;
+	}
+	#section-ingredients > .container-ingredients > #ingredients-block > #title-ingredients {
+		font-size: 33px;
+	}
+	#section-menu > .container-menu > .menu-block-column > .menu-block {
+		width: 75%;
+	}
+	#section-menu > .container-menu > .menu-block-column {
+		align-items: center;
+	}
+	#section-menu > .container-menu > .menu-block-column > .menu-block > .menu-title {
+		font-size: 36px;
+	}
+	#section-menu > .container-menu > .menu-block-column > .menu-block > .dec-divider {
+		width: 195px;
+	}
+	#section-menu > .container-menu > .menu-block-column > .menu-block > .menu-item > .menu-name-row {
+		font-size: 21px;
+	}
+	#section-menu > .container-menu > .menu-block-column > .menu-block > .menu-item > .dish-describe {
+		font-size: 15px;
+	}
+
+}
+
+@media (max-width: 460px) {
+	#nav-menu > li.header--link:first-child {
+		margin-top: 70px;
+	}
+	#section-reservations > .container-reservations > .reservation-content > .reservation-block > .input-block {
+		justify-content: center;
+	}
+	#section-reservations > .container-reservations > .reservation-content {
+		height: 100%;
+	}
+	#section-reservations > .container-reservations > .reservation-content > .reservation-block > .input-block > .input-item {
+		width: 100%;
+	}
+	#section-reservations > .container-reservations > .reservation-content > .reservation-block > .input-block > .input-item > .reservation-input {
+		width: 90%;
+	}
+	.logo img {
+		width: 100px;
+	}
+	#header-bg {
+		height: 70px;
+	}
+	.decoration-line {
+		width: 165px;
+	}
+	#section-about > .container-about {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	#section-ingredients {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	#section-menu > .container-menu {
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+	#section-reviews {
+		padding-top: 55px;
+		padding-bottom: 55px;
+	}
+	#section-reservations {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	footer#footer {
+		padding-bottom: 5px;
+	}
+	#section-ingredients > .container-ingredients > #ingredients-block {
+		padding-top: 35px;
+		padding-bottom: 5px;
+	}
+	#section-ingredients > .container-ingredients > #ingredients-block > #title-ingredients {
+		font-size: 26px;
+	}
+	.divider-white {
+		width: 170px;
+		margin-bottom: 15px;
+	}
+	#section-ingredients > .container-ingredients > #ingredients-block > #p-ingredients {
+		font-size: 14px;
+		margin-bottom: 30px;
+	}
+	#section-menu > .container-menu > .menu-block-column > .menu-block > .menu-title {
+		font-size: 34px;
+	}
+	#section-menu > .container-menu > .menu-block-column > .menu-block > .menu-item > .dish-describe {
+		font-size: 13px;
+	}
+	#section-menu > .container-menu > .menu-block-column > .menu-block > .menu-item > .menu-name-row {
+		font-size: 18px;
+	}
+	#section-reviews > .container-reviews > .reviews-block {
+		padding-top: 40px;
+		padding-bottom: 50px;
+	}
+	#section-reviews > .container-reviews > .reviews-block > .review-text {
+		font-size: 18px;
+	}
+	#section-reviews > .container-reviews > .reviews-block > .under-review-text {
+		font-size: 16px;
+	}
+	#section-reviews > .container-reviews > .reviews-block > .title-review {
+		font-size: 30px;
+	}
+	#section-reviews > .container-reviews > .reviews-block > .review-text:before {
+		width: 24px;
+		left: -6%;
+	}
+	#section-reservations > .container-reservations > .reservation-content > .reservation-block > .reserv-title {
+		font-size: 29px;
+	}
+	#section-reservations > .container-reservations > .reservation-content > .reservation-block > .reserv-text {
+		font-size: 14px;
+	}
+	footer#footer > #footer-section > .footer-block > .footer-text {
+		font-size: 14px;
+	}
+	#mobile-menu-btn {
+		width: 36px;
+		margin: 0;
+		height: 28px;
+	}
+	#mobile-menu-btn span {
+		height: 6px;
+	}
+	#mobile-menu-btn span:nth-child(2), #mobile-menu-btn span:nth-child(3) {
+		top: 11px;
+	}
+	#mobile-menu-btn span:nth-child(4) {
+		top: 22px;
+	}
+	header.navigation {
+		height: 70px;
+	}
+}
+
+@media (max-width: 420px) {
+	#main-promo-content > .title {
+		font-size: 27px;
+	}
+	#main-promo-content > #promo-btns > .btn-promo {
+		padding: 14px 50px;
+	}
+}
